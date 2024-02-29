@@ -6,13 +6,13 @@
 /*   By: brguicho <brguicho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:53:47 by brguicho          #+#    #+#             */
-/*   Updated: 2024/02/16 14:46:27 by brguicho         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:16:27 by brguicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long long int	ft_atol(const char *str)
 {
-	int	i;
+	int				i;
 	long long int	sign;
 	long long int	somme;
 
