@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brguicho <brguicho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 14:40:51 by brguicho          #+#    #+#             */
-/*   Updated: 2024/03/06 14:52:54 by brguicho         ###   ########.fr       */
+/*   Created: 2024/02/23 13:37:48 by brguicho          #+#    #+#             */
+/*   Updated: 2024/02/29 15:31:05 by brguicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@ int	g_reciever = 0;
 
 void	sig_handler(int signum, siginfo_t *info, void *context)
 {
+	static int	bit_send = 0;
+
 	(void) info;
 	(void) context;
-	(void) signum;
 	g_reciever = 1;
+	if (signum == SIGUSR2)
+		bit_send++;
+	if (signum == SIGUSR1)
+		ft_printf("number bite recieved %d\n", bit_send);
 }
 
 void	char_to_binary(int pid, char c)
